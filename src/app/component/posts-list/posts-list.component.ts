@@ -27,4 +27,7 @@ export class PostsListComponent implements OnInit {
     ]
   }
 
+  public onChangeHandle(): void {
+    console.log('onChangeHandle()');
+  }
 }

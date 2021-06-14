@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Post} from "../../model/post.model";
 
 @Component({
@@ -14,6 +15,8 @@ export class PostItemComponent implements OnInit {
     author: '',
   };
 
+  @Output() onChange = new EventEmitter();
+
   constructor() {
 
   }
@@ -21,4 +24,8 @@ export class PostItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  public buttonClicked(): void {
+ this.onChange.emit();
+  }
 }
